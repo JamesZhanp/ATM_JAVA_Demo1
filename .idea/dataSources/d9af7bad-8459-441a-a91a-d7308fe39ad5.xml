@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="hibernate.cfg.xml/Hibernate">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="atm">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="firewalllog"/>
+    <schema id="4" parent="1" name="fwlog"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="sakila"/>
+    <schema id="9" parent="1" name="student"/>
+    <schema id="10" parent="1" name="sys"/>
+    <schema id="11" parent="1" name="test"/>
+    <schema id="12" parent="1" name="world"/>
+    <table id="13" parent="2" name="card"/>
+    <table id="14" parent="2" name="city"/>
+    <table id="15" parent="2" name="manager"/>
+    <table id="16" parent="2" name="user"/>
+    <table id="17" parent="2" name="workrecord"/>
+    <column id="18" parent="13" name="cardId">
+      <Position>1</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="13" name="password">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="13" name="userId">
+      <Position>3</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="13" name="balance">
+      <Position>4</Position>
+      <DataType>double(10,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="13" name="cardNum">
+      <Position>5</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="13" name="registeredCity">
+      <Position>6</Position>
+      <DataType>int(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="13" name="isUsed">
+      <Position>7</Position>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="25" parent="13" name="registeredCity">
+      <ColNames>registeredCity</ColNames>
+    </index>
+    <index id="26" parent="13" name="userId">
+      <ColNames>userId</ColNames>
+    </index>
+    <key id="27" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cardId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="28" parent="13" name="card_ibfk_1">
+      <ColNames>userId</ColNames>
+      <RefSchemaName>atm</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>userId</RefColNames>
+    </foreign-key>
+    <foreign-key id="29" parent="13" name="card_ibfk_2">
+      <ColNames>registeredCity</ColNames>
+      <RefSchemaName>atm</RefSchemaName>
+      <RefTableName>city</RefTableName>
+      <RefColNames>cityId</RefColNames>
+    </foreign-key>
+    <column id="30" parent="14" name="cityId">
+      <Position>1</Position>
+      <DataType>int(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="31" parent="14" name="cityName">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <key id="32" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cityId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="15" name="manager_id">
+      <Position>1</Position>
+      <DataType>int(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="15" name="managerNum">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="15" name="password">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="36" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>manager_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="37" parent="16" name="userId">
+      <Position>1</Position>
+      <DataType>int(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="38" parent="16" name="userName">
+      <Position>2</Position>
+      <DataType>varchar(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="16" name="gender">
+      <Position>3</Position>
+      <Comment>性别</Comment>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="16" name="age">
+      <Position>4</Position>
+      <DataType>int(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="16" name="address">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="16" name="telNum">
+      <Position>6</Position>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="16" name="IDNum">
+      <Position>7</Position>
+      <DataType>varchar(18)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="44" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>userId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="17" name="recordId">
+      <Position>1</Position>
+      <DataType>int(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="17" name="cardNum">
+      <Position>2</Position>
+      <DataType>int(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="17" name="type">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="17" name="time">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="17" name="moneyNum">
+      <Position>5</Position>
+      <DataType>double(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="17" name="balance">
+      <Position>6</Position>
+      <DataType>double(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="17" name="workCity">
+      <Position>7</Position>
+      <DataType>int(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="52" parent="17" name="cardNum">
+      <ColNames>cardNum</ColNames>
+    </index>
+    <index id="53" parent="17" name="workCity">
+      <ColNames>workCity</ColNames>
+    </index>
+    <key id="54" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>recordId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="55" parent="17" name="workrecord_ibfk_2">
+      <ColNames>cardNum</ColNames>
+      <RefSchemaName>atm</RefSchemaName>
+      <RefTableName>card</RefTableName>
+      <RefColNames>cardId</RefColNames>
+    </foreign-key>
+    <foreign-key id="56" parent="17" name="workrecord_ibfk_1">
+      <ColNames>workCity</ColNames>
+      <RefSchemaName>atm</RefSchemaName>
+      <RefTableName>city</RefTableName>
+      <RefColNames>cityId</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

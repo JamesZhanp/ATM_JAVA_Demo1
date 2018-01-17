@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.entity.CardEntity" table="card" schema="atm">
+        <id name="cardId">
+            <column name="cardId" sql-type="int(10)"/>
+            <generator class="increment"/>
+        </id>
+        <property name="password">
+            <column name="password" sql-type="varchar(10)" length="10"/>
+        </property>
+        <property name="userId">
+            <column name="userId" sql-type="int(10)"/>
+        </property>
+        <property name="balance">
+            <column name="balance" sql-type="double(10,2)" precision="10" scale="2"/>
+        </property>
+        <property name="cardNum">
+            <column name="cardNum" sql-type="varchar(15)" length="15"/>
+        </property>
+        <property name="registeredCity">
+            <column name="registeredCity" sql-type="int(3)"/>
+        </property>
+        <property name="isUsed">
+            <column name="isUsed" sql-type="int(1)"/>
+        </property>
+    </class>
+</hibernate-mapping>

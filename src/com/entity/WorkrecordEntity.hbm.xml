@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.entity.WorkrecordEntity" table="workrecord" schema="atm">
+        <id name="recordId">
+            <column name="recordId" sql-type="int(3)"/>
+            <generator class="increment"/>
+        </id>
+        <property name="cardNum">
+            <column name="cardNum" sql-type="int(3)"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="varchar(10)" length="10"/>
+        </property>
+        <property name="time">
+            <column name="time" sql-type="datetime"/>
+        </property>
+        <property name="moneyNum">
+            <column name="moneyNum" sql-type="double(10)" precision="10"/>
+        </property>
+        <property name="balance">
+            <column name="balance" sql-type="double(10)" precision="10"/>
+        </property>
+        <property name="workCity">
+            <column name="workCity" sql-type="int(3)"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/atm</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">123456</property>
+        <!--展示MySQL语言-->
+        <property name="show_sql">true</property>
+        <!-- DB schema will be updated if needed -->
+         <property name="hbm2ddl.auto">update</property>
+        <mapping resource="com/entity/CardEntity.hbm.xml"/>
+        <mapping resource="com/entity/CityEntity.hbm.xml"/>
+        <mapping resource="com/entity/UserEntity.hbm.xml"/>
+        <mapping resource="com/entity/WorkrecordEntity.hbm.xml"/>
+        <mapping resource="com/entity/ManagerEntity.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

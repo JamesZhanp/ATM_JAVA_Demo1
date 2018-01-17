@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.entity.UserEntity" table="user" schema="atm">
+        <id name="userId">
+            <column name="userId" sql-type="int(100)"/>
+            <generator class="increment"/>
+        </id>
+        <property name="userName">
+            <column name="userName" sql-type="varchar(5)" length="5"/>
+        </property>
+        <property name="gender">
+            <column name="gender" sql-type="int(1)"/>
+        </property>
+        <property name="age">
+            <column name="age" sql-type="int(3)"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="telNum">
+            <column name="telNum" sql-type="varchar(11)" length="11"/>
+        </property>
+        <property name="idNum">
+            <column name="IDNum" sql-type="varchar(18)" length="18"/>
+        </property>
+    </class>
+</hibernate-mapping>
